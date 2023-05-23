@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background: url(img/Texturas/Metal-texture.png);
+}
+
 header {
     display: flex;
     align-items: center;
@@ -20,7 +24,7 @@ header {
     height: 70px;
     padding: 10px;
     border: 1px solid orange;
-    background: black;
+    background: url(img/Texturas/stone-texture.png);
     color: orange;
 
     margin-left: 5px;
@@ -60,12 +64,13 @@ button {
     padding-right: 10px;
     height: 30px;
 
-    background-color: black;
+    background: black;
     color: orange;
     border: 2px solid orange;
     border-radius: 5px;
 
 }
+#BTN {display: none;}
 
 .Cubos_resposta {
     height: 50px;
@@ -74,7 +79,7 @@ button {
     align-items: center;
     justify-content: center;
 
-    background-color: red;
+    background:url(img/Texturas/wooden-texture.png);
 }
 
 .opcoes {
@@ -83,7 +88,7 @@ button {
     height: 100px;
     padding: 10px;
     border: 1px solid orange;
-    background: black;
+    background: url(img/Texturas/stone-texture.png);
     color: orange;
 
 

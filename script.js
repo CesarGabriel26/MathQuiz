@@ -17,7 +17,7 @@ var Vidas_totais = 5
 var Vidas_Atuais = 0
 
 var pontuacao_ = 0
-
+    
 setInterval(Mostrar_botao_confirmar, 100);
 
 Atualizar_Vidas("Iniciando")
@@ -106,7 +106,12 @@ function Confirmar_Valor_Indicado() {
 function PlaySound(AudioPath, Stado) {
     var sound = document.createElement('audio');
     sound.src = AudioPath;
-    sound.play()
+    
+    OneShot = true
+    if(OneShot){
+        sound.play()
+        OneShot = false
+    }
 
     sound.addEventListener("ended", () => {
         if (Stado != "GameOver") {
@@ -162,10 +167,8 @@ function Atualizar_Vidas(Stado) {
         pontuacao.innerHTML = "0"
 
     }else {
-        console.log(Vidas_Atuais);
         
         let vidas = document.querySelectorAll("#Vida");
-        console.log(vidas);
 
         vidas[(Vidas_Atuais - 1)].src = "img/vida perdida.png"
         Vidas_Atuais -= 1
@@ -175,7 +178,6 @@ function Atualizar_Vidas(Stado) {
 }
 
 function ChecarVida() {
-    console.log(Vidas_Atuais);
     if (Vidas_Atuais == 0) {
         OneShot = true
         if (OneShot) {
