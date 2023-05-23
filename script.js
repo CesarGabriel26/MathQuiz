@@ -84,7 +84,7 @@ function Confirmar_Valor_Indicado() {
         if (Valor == Valor_sorteado1) {
             if (OneShot) {
 
-                PlaySound("../audio/Acerto.mp3", "")
+                PlaySound("audio/Acerto.mp3", "")
                 initConfetti()
                 OneShot = false
                 pontuacao_ += 500
@@ -92,7 +92,7 @@ function Confirmar_Valor_Indicado() {
             }
         }else {
             if (OneShot) {
-                PlaySound("../audio/Errado.mp3", "")
+                PlaySound("audio/Errado.mp3", "")
                 OneShot = false
     
                 erro.classList.add("error")
@@ -128,7 +128,7 @@ function PlaySound(AudioPath, Stado) {
             IniciarJogo()
         }
 
-        if (AudioPath == "../audio/Errado.mp3") {
+        if (AudioPath == "audio/Errado.mp3") {
             erro.classList.remove("error")
             Atualizar_Vidas("")
 
@@ -237,7 +237,7 @@ function ChecarVida() {
     if (Vidas_Atuais == 0) {
         OneShot = true
         if (OneShot) {
-            PlaySound("../audio/Vitoria.mp3", "GameOver")
+            PlaySound("audio/Vitoria.mp3", "GameOver")
             gamepver()
         }
     }
