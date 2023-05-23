@@ -181,3 +181,4 @@ button {
     flex-direction: column;
     color: orange;
 }
+#winGame {display: none;}

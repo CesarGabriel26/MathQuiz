@@ -84,30 +84,34 @@ function Confirmar_Valor_Indicado() {
         if (Valor == Valor_sorteado1) {
             if (OneShot) {
 
-                if (pontuacao_ >= 10000) {
-                    WinGame()
-                }else {
-
-                    PlaySound("../audio/Acerto.mp3", "")
-                    initConfetti()
-                    OneShot = false
-                    pontuacao_ += 500
-                    pontuacao.innerHTML = pontuacao_
-                }
+                PlaySound("../audio/Acerto.mp3", "")
+                initConfetti()
+                OneShot = false
+                pontuacao_ += 500
+                pontuacao.innerHTML = pontuacao_
             }
-        } else {
+        }else {
             if (OneShot) {
                 PlaySound("../audio/Errado.mp3", "")
                 OneShot = false
-
+    
                 erro.classList.add("error")
-
+    
             }
         }
+
+        if (pontuacao_ >= 10000) {
+            
+            OneShot = true
+            if (OneShot) {
+                WinGame()
+                OneShot = false
+            }
+        }
+
     }
-
-
 }
+
 
 function PlaySound(AudioPath, Stado) {
     var sound = document.createElement('audio');
@@ -161,40 +165,46 @@ function gamepver() {
 }
 function WinGame() {
 
-    document.body.innerHTML += `
     
-    <div id="WinGame">
-
-        <h1>Parabens Sua Pontuação foi de</h1>
-
-        <h2 id="WinGamePontos"></h2>
-
-
-        <br>
-        <br>
-
-        <button onclick="location.reload()">Jogar novamente ?</button>
-
-        <div style = "display: flex; margin-top: 82px;"> 
-        
-            <div style = "display: flex;justify-content: center;align-items: center;flex-direction: column;">
-                <p>Programação</p>
-                <img style = "height: 200px;" src= "img/criadores/Ray.png">
-            </div>
-
-            <div style = "display: flex;justify-content: center;align-items: center;flex-direction: column;">
-                <p>Arte</p>
-                <img style = "height: 200px;"  src= "img/criadores/Ellye.png">
-            </div>
-        
-        </div>
-
-    </div>
-    
-    `
 
     let gameover_ = document.getElementById("WinGame")
     gameover_.style.display = "flex"
+
+    OneShot = true
+    if (OneShot) {
+        gameover_.innerHTML = `
+    
+    
+
+    <h1>Parabens Sua Pontuação foi de</h1>
+
+    <h2 id="WinGamePontos"></h2>
+
+
+    <br>
+    <br>
+
+    <button onclick="location.reload()">Jogar novamente ?</button>
+
+    <div style = "display: flex; margin-top: 82px;"> 
+    
+        <div style = "display: flex;justify-content: center;align-items: center;flex-direction: column;">
+            <p>Programação</p>
+            <img style = "height: 200px;" src= "img/criadores/Ray.png">
+        </div>
+
+        <div style = "display: flex;justify-content: center;align-items: center;flex-direction: column;">
+            <p>Arte</p>
+            <img style = "height: 200px;"  src= "img/criadores/Ellye.png">
+        </div>
+    
+    </div>
+
+ 
+    
+    `
+        OneShot = false
+    }
 
     let pontos = document.getElementById("WinGamePontos")
     pontos.innerHTML = pontuacao_
