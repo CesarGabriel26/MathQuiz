@@ -17,7 +17,7 @@ var Vidas_totais = 5
 var Vidas_Atuais = 0
 
 var pontuacao_ = 0
-    
+
 setInterval(Mostrar_botao_confirmar, 100);
 
 Atualizar_Vidas("Iniciando")
@@ -83,11 +83,17 @@ function Confirmar_Valor_Indicado() {
 
         if (Valor == Valor_sorteado1) {
             if (OneShot) {
-                initConfetti()
-                PlaySound("../audio/Acerto.mp3", "")
-                OneShot = false
-                pontuacao_ += 500
-                pontuacao.innerHTML = pontuacao_
+
+                if (pontuacao_ >= 10000) {
+                    WinGame()
+                }else {
+
+                    PlaySound("../audio/Acerto.mp3", "")
+                    initConfetti()
+                    OneShot = false
+                    pontuacao_ += 500
+                    pontuacao.innerHTML = pontuacao_
+                }
             }
         } else {
             if (OneShot) {
@@ -106,9 +112,9 @@ function Confirmar_Valor_Indicado() {
 function PlaySound(AudioPath, Stado) {
     var sound = document.createElement('audio');
     sound.src = AudioPath;
-    
+
     OneShot = true
-    if(OneShot){
+    if (OneShot) {
         sound.play()
         OneShot = false
     }
@@ -121,7 +127,7 @@ function PlaySound(AudioPath, Stado) {
         if (AudioPath == "../audio/Errado.mp3") {
             erro.classList.remove("error")
             Atualizar_Vidas("")
-            
+
         }
 
     })
@@ -145,12 +151,52 @@ function gamepver() {
 
     </div>
     
-    `   
+    `
 
     let gameover_ = document.getElementById("gameOver")
     gameover_.style.display = "flex"
 
     let pontos = document.getElementById("Pontos")
+    pontos.innerHTML = pontuacao_
+}
+function WinGame() {
+
+    document.body.innerHTML += `
+    
+    <div id="WinGame">
+
+        <h1>Parabens Sua Pontuação foi de</h1>
+
+        <h2 id="WinGamePontos"></h2>
+
+
+        <br>
+        <br>
+
+        <button onclick="location.reload()">Jogar novamente ?</button>
+
+        <div style = "display: flex; margin-top: 82px;"> 
+        
+            <div style = "display: flex;justify-content: center;align-items: center;flex-direction: column;">
+                <p>Programação</p>
+                <img style = "height: 200px;" src= "img/criadores/Ray.png">
+            </div>
+
+            <div style = "display: flex;justify-content: center;align-items: center;flex-direction: column;">
+                <p>Arte</p>
+                <img style = "height: 200px;"  src= "img/criadores/Ellye.png">
+            </div>
+        
+        </div>
+
+    </div>
+    
+    `
+
+    let gameover_ = document.getElementById("WinGame")
+    gameover_.style.display = "flex"
+
+    let pontos = document.getElementById("WinGamePontos")
     pontos.innerHTML = pontuacao_
 }
 
@@ -166,8 +212,8 @@ function Atualizar_Vidas(Stado) {
         Vidas_Atuais = Vidas_totais;
         pontuacao.innerHTML = "0"
 
-    }else {
-        
+    } else {
+
         let vidas = document.querySelectorAll("#Vida");
 
         vidas[(Vidas_Atuais - 1)].src = "img/vida perdida.png"

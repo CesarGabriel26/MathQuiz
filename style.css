@@ -25,7 +25,9 @@ header {
     padding: 10px;
     border: 1px solid orange;
     background: url(img/Texturas/stone-texture.png);
-    color: orange;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
 
     margin-left: 5px;
     margin-right: 5px;
@@ -48,13 +50,18 @@ p {
 }
 
 .container h1 {
-    color: orange;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
 }
 
 .container .inputs {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
-
+.container .inputs h1 {height: fit-content; width: fit-content;}
 .container .Confirmar {
     margin-left: 10px;
 }
@@ -65,12 +72,17 @@ button {
     height: 30px;
 
     background: black;
-    color: orange;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
     border: 2px solid orange;
     border-radius: 5px;
 
 }
-#BTN {display: none;}
+
+#BTN {
+    display: none;
+}
 
 .Cubos_resposta {
     height: 50px;
@@ -79,7 +91,7 @@ button {
     align-items: center;
     justify-content: center;
 
-    background:url(img/Texturas/wooden-texture.png);
+    background: url(img/Texturas/wooden-texture.png);
 }
 
 .opcoes {
@@ -89,7 +101,8 @@ button {
     padding: 10px;
     border: 1px solid orange;
     background: url(img/Texturas/stone-texture.png);
-    color: orange;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
 
     display: flex;
@@ -148,9 +161,11 @@ button {
     width: 200px;
     overflow-wrap: break-word;
     right: -130px;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-
+#WinGame,
 #gameOver {
     display: flex;
     position: absolute;
