@@ -1,14 +1,72 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Quiz</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/demo.css">
 </head>
+
 <body>
+    <!--
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <div id="Cubo1" draggable="true" ondragstart="drag(event)"><p>aaaaaaaaaa</p></div>
+        <div id="Cubo2" draggable="true" ondragstart="drag(event)"><p>aaaaaaaaaa</p></div>
+    -->
+
+    <main>
+
+        <header>
+            <div class="vidas"></div>
+            <h1 class="pontuacao">500</h1>
+        </header>
+
+
+        </div>
+
+        <div class="Main">
+            <div class="container">
+
+                <div class="inputs">
+                    <div class="caixa" id="caixa" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <h1>+</h1>
+                    <p id="caixa_valor2" class="caixa"></p>
+                    <h1>=</h1>
+                    <p id="caixa_resposta" class="caixa"></p>
+
+                </div>
+
+                <button id="BTN" class="Confirmar">Confirmar</button>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <div class="opcoes" id="caixa_opcao" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
+    <canvas style="width: 100%; position: absolute;top: 0;" class="confetti" id="canvas"></canvas>
+    
+    <div class="erro"></div>
+
+    <div class="tutorial" id="Tutorial">
+        <p id="Text_box">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+        <img height="300px" src="img/Alpha/Atenção.png" id="Img">
+    </div>
+
     
 
+    <script src="script.js"></script>
+    <script src="js/Tutorial.js"></script>
+    <script src="js/confetti.js"></script>
+
 </body>
+
 </html>
