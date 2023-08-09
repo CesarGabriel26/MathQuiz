@@ -1,6 +1,3 @@
-Baixe os arquivos para que o jogo funcione melhor
-A um bugue que ele não encontra os arquivos de audio se rodado pelo github
-
 <div>
   <h1>MathQuiz</h1>
   <p>MathQuiz é um jogo de navegador, onde voce tera que arasta o bloco com a resposta correta para o espaço vasio na conta mostrada no meio da tela</p>
